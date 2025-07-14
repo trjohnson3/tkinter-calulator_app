@@ -6,22 +6,24 @@ root.title("Calculator")
 entryBox = Entry(root, width=35, borderwidth=5)
 entryBox.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 
-def button_add():
+def button_click(number):
+    #entryBox.delete(0, END)
+    entryBox.insert(END, number)
     return
 
-button_1 = Button(root, text="1", padx=40, pady=20, command=button_click)
-button_2 = Button(root, text="2", padx=40, pady=20, command=button_click)
-button_3 = Button(root, text="3", padx=40, pady=20, command=button_click)
-button_4 = Button(root, text="4", padx=40, pady=20, command=button_click)
-button_5 = Button(root, text="5", padx=40, pady=20, command=button_click)
-button_6 = Button(root, text="6", padx=40, pady=20, command=button_click)
-button_7 = Button(root, text="7", padx=40, pady=20, command=button_click)
-button_8 = Button(root, text="8", padx=40, pady=20, command=button_click)
-button_9 = Button(root, text="9", padx=40, pady=20, command=button_click)
-button_0 = Button(root, text="0", padx=40, pady=20, command=button_click)
-button_add = Button(root, text="+", padx=39, pady=20, command=button_click)
-button_equal = Button(root, text="=", padx=91, pady=20, command=button_click)
-button_clear = Button(root, text="clear", padx=79, pady=20, command=button_click)
+button_1 = Button(root, text="1", padx=40, pady=20, command=lambda: button_click(1))
+button_2 = Button(root, text="2", padx=40, pady=20, command=lambda: button_click(2))
+button_3 = Button(root, text="3", padx=40, pady=20, command=lambda: button_click(3))
+button_4 = Button(root, text="4", padx=40, pady=20, command=lambda: button_click(4))
+button_5 = Button(root, text="5", padx=40, pady=20, command=lambda: button_click(5))
+button_6 = Button(root, text="6", padx=40, pady=20, command=lambda: button_click(6))
+button_7 = Button(root, text="7", padx=40, pady=20, command=lambda: button_click(7))
+button_8 = Button(root, text="8", padx=40, pady=20, command=lambda: button_click(8))
+button_9 = Button(root, text="9", padx=40, pady=20, command=lambda: button_click(9))
+button_0 = Button(root, text="0", padx=40, pady=20, command=lambda: button_click(0))
+button_add = Button(root, text="+", padx=39, pady=20, command=lambda: button_click())
+button_equal = Button(root, text="=", padx=91, pady=20, command=lambda: button_click())
+button_clear = Button(root, text="clear", padx=79, pady=20, command=lambda: button_click())
 
 #put buttons on screen
 
