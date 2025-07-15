@@ -68,16 +68,16 @@ def click_equal():
         second_num = entryBox.get()
     entryBox.delete(0, END)
     if temp_operation == '+':
-        entryBox.insert(0, temp_num + int(second_num))
+        entryBox.insert(0, temp_num + float(second_num))
     elif temp_operation == '-':
-        entryBox.insert(0, temp_num - int(second_num))
+        entryBox.insert(0, temp_num - float(second_num))
     elif temp_operation == '*':
-        entryBox.insert(0, temp_num * int(second_num))
+        entryBox.insert(0, temp_num * float(second_num))
     else:
         if float(second_num) == 0:
             entryBox.insert(0, -9999999999999)
         else:
-            entryBox.insert(0, temp_num / int(second_num))
+            entryBox.insert(0, temp_num / float(second_num))
 
 
 button_1 = Button(root, text="1", padx=40, pady=20, command=lambda: click_number(1))
@@ -95,7 +95,8 @@ button_subtract = Button(root, text="-", padx=41, pady=20, command=click_subtrac
 button_multiply = Button(root, text="*", padx=40, pady=20, command=click_multiply)
 button_divide = Button(root, text="/", padx=41, pady=20, command=click_divide)
 button_equal = Button(root, text="=", padx=91, pady=20, command=click_equal)
-button_clear = Button(root, text="clear", padx=79, pady=20, command=click_clear)
+button_clear = Button(root, text="clear", padx=29, pady=20, command=click_clear)
+button_decimal = Button(root, text=".", padx=41, pady=20, command=lambda: click_number('.'))
 
 #put buttons on screen
 
@@ -112,13 +113,15 @@ button_8.grid(row=1, column=1)
 button_9.grid(row=1, column=2)
 
 button_0.grid(row=4, column=1)
-button_clear.grid(row=5, column=1, columnspan=2)
+button_clear.grid(row=5, column=2)
 button_add.grid(row=4, column=0)
 button_equal.grid(row=6, column=1, columnspan=2)
 
 button_subtract.grid(row=4, column=2)
 button_multiply.grid(row=5, column=0)
 button_divide.grid(row=6, column=0)
+
+button_decimal.grid(row=5, column=1)
 
 
 root.mainloop()
